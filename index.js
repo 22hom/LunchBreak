@@ -1,6 +1,5 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-// const { response } = require('express');
 const express = require('express');
 const cors = require('cors');
 
@@ -8,6 +7,9 @@ const app = express();
 app.use(cors());
 
 const PORT = 8000;
+
+const midtownSite = 'https://lego.isscatering.dk/midtown';
+const campusSite = 'https://lego.isscatering.dk/aastvej';
 
 app.get('/', function (req, res) {
    res.json('Hello from webscraper');
@@ -33,16 +35,26 @@ app.get('/midtownMenu', (req, res) => {
       }).catch(err => console.log(err));
 })
 
-const midtownSite = 'https://lego.isscatering.dk/midtown';
-const campusSite = 'https://lego.isscatering.dk/aastvej';
 
 
+app.get('/campusMenu', (req, res) => {
+   axios(campusSite)
+      .then(response => {
+         const campusHtml = response.data
+         const campusMenu = cheerio.load(campusHtml)
+         const menuItemsArray = []
 
-// axios(campusMenu)
-//    .then(response => {
-//       const campusHtml = response.data
-//       cheerio.load(campusHtml)
-//       const 
-//    })
+         campusMenu('.menu-row.show-description.row', campusHtml).each(function () {
+            const title = campusMenu(this).find('.element.title.col-md-12.col-xs-12').text().trim()
+            const description = campusMenu(this).find('.element.show-description.description.col-md-12.col-xs-12').text().trim()
+            menuItemsArray.push({
+               title,
+               description
+            })
+         })
+
+         res.json(menuItemsArray);
+      }).catch(err => console.log(err));
+})
 
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`));
