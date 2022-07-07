@@ -1,0 +1,25 @@
+{
+  "name": "legolunchboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rikkerorbak/legolunchboard.git"
+  },
+  "author": "Rikke Rørbæk Olsen and Christian Hummel Holm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rikkerorbak/legolunchboard/issues"
+  },
+  "homepage": "https://github.com/rikkerorbak/legolunchboard#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
