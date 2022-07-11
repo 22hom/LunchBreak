@@ -2,8 +2,12 @@ body {
    background-color: cadetblue;
 }
 
-
 h3 {
    color: aquamarine;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+   width: 500px;
+   /* max-width: 500px; */
 }
