@@ -25,13 +25,14 @@ app.get('/midtownMenu', (req, res) => {
          midtownMenu('.menu-row.show-description.row', midtownHtml).each(function () {
             const title = midtownMenu(this).find('.element.title.col-md-12.col-xs-12').text().trim()
             const description = midtownMenu(this).find('.element.show-description.description.col-md-12.col-xs-12').text().trim()
+
             menuItemsArray.push({
                title,
                description
             })
          })
 
-         res.json(menuItemsArray);
+         res.json(menuItemsArray)
       }).catch(err => console.log(err));
 })
 
@@ -57,4 +58,5 @@ app.get('/campusMenu', (req, res) => {
       }).catch(err => console.log(err));
 })
 
+// console.log(menuItemsArray);
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`));

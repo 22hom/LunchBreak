@@ -4,7 +4,7 @@ const campusContent = document.querySelector('#campus');
 
 async function getMidTownMenu() {   //consider using async/await instead of promises
    fetch('http://localhost:8000/midtownMenu')
-      .then(response => { return response.json() })
+      .then(response => { return response.json() }) //return response.json()
       .then(data => {
          data.forEach(item => {
             const menuItem = `<h3>${item.title}</h3><p>${item.description}</p>`
@@ -19,7 +19,7 @@ async function getCampusMenu() {
       .then(response => { return response.json() })
       .then(data => {
          data.forEach(item => {
-            const menuItem = `<h3>${item.title}</h3><p>${item.description}</p>`
+            const menuItem = `<div class="menuItem"><h3>${item.title}</h3><p>${item.description}</p></div>`
             campusContent.insertAdjacentHTML('beforeend', menuItem)
          })
       })
@@ -28,3 +28,8 @@ async function getCampusMenu() {
 
 getMidTownMenu();
 getCampusMenu();
+
+if (midtownContent.childElementCount < 2) {
+   const noMenuMsg = 'No menu today!'
+   midtownContent.insertAdjacentText('beforeend', noMenuMsg);
+}
