@@ -1,8 +1,6 @@
 
-// const midtownContent = document.querySelector('#midtown');
 const midtownContent = document.querySelector('#midtown-frame-container');
 const campusContent = document.querySelector('#campus-frame-container');
-// const campusContent = document.querySelector('.frame-container');
 const iconArray = ['../src/assets/icons/hot.png', '../src/assets/icons/diet.png', '../src/assets/icons/salad.png'];
 
 async function getMidTownMenu() {   //consider using async/await instead of promises
