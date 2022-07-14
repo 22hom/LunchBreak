@@ -1,4 +1,4 @@
-const container = document.querySelector('#gif-box');
+const container = document.querySelector('#img-container');
 var request = new XMLHttpRequest();
 
 const gif = document.createElement('img');
