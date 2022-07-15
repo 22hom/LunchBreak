@@ -31,6 +31,7 @@ getMidTownMenu();
 getCampusMenu();
 
 if (midtownContent.childElementCount < 2) {
-   const noMenuMsg = `<h2>Intet på menuen i dag!</h2>`
+   // const noMenuMsg = `<h2>Intet på menuen i dag!</h2>`
+   const noMenuMsg = `<div class="menuItem"><h2>Intet på menuen i dag</h2></div>`
    midtownContent.insertAdjacentHTML('beforeend', noMenuMsg);
 }
