@@ -1,5 +1,5 @@
-const axios = require('axios');
-// import axios from 'axios';
+// const axios = require('axios');
+import axios from 'axios';
 const cheerio = require('cheerio');
 const express = require('express');
 const cors = require('cors');
@@ -15,6 +15,29 @@ const campusSite = 'https://lego.isscatering.dk/aastvej';
 app.get('/', function (req, res) {
    res.json('Hello from webscraper');
 })
+
+// function getMenu(endpoint, siteUrl) {
+//    app.get('/' + endpoint, (req, res) => {
+//       axios(siteUrl)
+//          .then(response => {
+//             const siteHtml = response.data
+//             const menu = cheerio.load(siteHtml)
+//             const menuItemsArray = []
+
+//             menu('.menu-row.show-description.row', siteHtml).each(function () {
+//                const title = menu(this).find('.element.title.col-md-12.col-xs-12').text().trim()
+//                const description = menu(this).find('.element.show-description.description.col-md-12.col-xs-12').text().trim()
+
+//                menuItemsArray.push({
+//                   title,
+//                   description
+//                })
+//             })
+
+//             res.json(menuItemsArray)
+//          }).catch(err => console.log(err));
+//    })
+// }
 
 app.get('/midtownMenu', (req, res) => {
    axios(midtownSite)
@@ -37,6 +60,10 @@ app.get('/midtownMenu', (req, res) => {
       }).catch(err => console.log(err));
 })
 
+
+
+// getMenu(midtownMenu, midtownSite);
+// getMenu(campusMenu, campusSite);
 
 
 app.get('/campusMenu', (req, res) => {
