@@ -3,9 +3,10 @@
    "version": "1.0.0",
    "description": "",
    "private": true,
+   "type": "module",
    "scripts": {
       "build": "webpack",
-      "start": "nodemon index.js"
+      "start": "nodemon src/index.js"
    },
    "repository": {
       "type": "git",
