@@ -1,4 +1,6 @@
 const container = document.querySelector('#img-container');
+// var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
 var request = new XMLHttpRequest();
 
 const gif = document.createElement('img');
@@ -28,3 +30,5 @@ function getGifNoFirstDelay(func, interval) {
 }
 
 getGifNoFirstDelay(getGif, 10000);
+
+export { getGif, getGifNoFirstDelay }

@@ -1,8 +1,10 @@
 
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 import express from 'express';
 import cors from 'cors';
+
+// import { getGif, getGifNoFirstDelay } from './giphy.js';569
 
 const app = express();
 app.use(cors());
@@ -59,5 +61,15 @@ app.get('/campusMenu', (req, res) => {
       }).catch(err => console.log(err));
 })
 
-// console.log(menuItemsArray);
+
+// const container = document.querySelector('#img-container');
+
+// const gif = document.createElement('img');
+// container.appendChild(gif);
+
+// const container = document.querySelector('#img-container');
+// const gif = document.createElement('img');
+// container.appendChild(gif);
+// getGifNoFirstDelay(getGif, 10000);
+
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`));

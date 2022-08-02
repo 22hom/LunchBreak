@@ -1,4 +1,3 @@
-
 const midtownContent = document.querySelector('#midtown-frame-container');
 const campusContent = document.querySelector('#campus-frame-container');
 const iconArray = ['../src/assets/icons/hot.png', '../src/assets/icons/diet.png', '../src/assets/icons/salad.png'];
@@ -13,6 +12,11 @@ async function getMidTownMenu() {   //consider using async/await instead of prom
          })
       })
       .catch(err => console.log(err))
+
+   if (midtownContent.childElementCount < 2) {
+      const noMenuMsg = `<div class="menuItem"><h2>Intet på menuen i dag</h2></div>`
+      midtownContent.insertAdjacentHTML('beforeend', noMenuMsg);
+   }
 }
 
 async function getCampusMenu() {
@@ -25,16 +29,13 @@ async function getCampusMenu() {
          })
       })
       .catch(err => console.log(err));
+
+   if (campusContent.childElementCount < 2) {
+      const noMenuMsg = `<div class="menuItem"><h2>Intet på menuen i dag</h2></div>`
+      campusContent.insertAdjacentHTML('beforeend', noMenuMsg);
+   }
 }
 
 getMidTownMenu();
 getCampusMenu();
 
-if (midtownContent.childElementCount < 2) {
-   const noMenuMsg = `<div class="menuItem"><h2>Intet på menuen i dag</h2></div>`
-   midtownContent.insertAdjacentHTML('beforeend', noMenuMsg);
-}
-if (campusContent.childElementCount < 2) {
-   const noMenuMsg = `<div class="menuItem"><h2>Intet på menuen i dag</h2></div>`
-   campusContent.insertAdjacentHTML('beforeend', noMenuMsg);
-}

@@ -28,6 +28,7 @@ body {
 h3 {
    margin-top: 0.2em;
    margin-bottom: 0.2em;
+   min-width: fit-content;
 }
 
 #menuAndGifContainer p {
@@ -56,7 +57,7 @@ h3 {
    margin-right: 40px; */
    width: 500px;
    /* height: 82.6vh; */
-   height: 590px;
+   height: 580px;
    border-radius: 70px;
    background-color: white;
 }
@@ -95,7 +96,7 @@ h3 {
 
 #gif-box {
    display: flex;
-   align-content: center;
+   align-items: center;
    justify-content: center;
    height: 700px;
    background-image: url('../src/assets/images/GIF.svg');
@@ -118,7 +119,7 @@ h3 {
 #gif-box img {
    border-radius: 10px;
    max-width: 70%;
-   max-height: 50%;
+   max-height: 40%;
 }
 
 #box-heading {
