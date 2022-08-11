@@ -45,7 +45,7 @@ app.get('/campusMenu', (req, res) => {
    axios(campusSite)
       .then(response => {
          const campusHtml = response.data
-         console.log(campusHtml);
+         // console.log(campusHtml);
          const campusMenu = cheerio.load(campusHtml)
          const menuItemsArray = []
 
