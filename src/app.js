@@ -16,7 +16,7 @@ async function getMidTownMenu() {   //consider using async/await instead of prom
 }
 
 async function getCampusMenu() {
-   fetch('http://localhost:8000/campusMenu')
+   fetch('https://lego.isscatering.dk/?menu=m1028-front&l=da')
       .then(response => { return response.json() })
       .then(data => {
          data.forEach(item => {
