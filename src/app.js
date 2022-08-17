@@ -4,7 +4,7 @@ const campusContent = document.querySelector('#campus-frame-container');
 const iconArray = ['../src/assets/icons/hot.png', '../src/assets/icons/diet.png', '../src/assets/icons/salad.png'];
 
 async function getMidTownMenu() {   //consider using async/await instead of promises
-   fetch('http://localhost:8000/midtownMenu')
+   fetch('https://lego.isscatering.dk/?menu=m1029-front&l=da')
       .then(response => { return response.json() }) //return response.json()
       .then(data => {
          data.forEach(item => {
