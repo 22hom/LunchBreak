@@ -8,8 +8,8 @@ app.use(cors());
 
 const PORT = 8000;
 
-const midtownSite = 'https://lego.isscatering.dk/midtown';
-const campusSite = 'https://lego.isscatering.dk/aastvej';
+const midtownSite = 'https://lego.isscatering.dk/midtown/en';
+const campusSite = 'https://lego.isscatering.dk/aastvej/en';
 
 app.get('/', function (req, res) {
    res.json('Hello from webscraper');
